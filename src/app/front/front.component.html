@@ -1,0 +1,11 @@
+<html>
+<form #perForm="ngForm">
+  <input type="text" name="luname" [(ngModel)] ="per.uname" placeholder="uname"><br><br>
+  <input type="button" value="reg" (click)="onReg()"><br><br>
+
+  <input type="text" name="suname" [(ngModel)] ="per.uname" placeholder="uname"><br><br>
+  <input type="button" value="log" (click)="onSign()">
+  {{per.uname}}
+</form>
+
+</html>
