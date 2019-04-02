@@ -13,9 +13,17 @@ export class FrontComponent implements OnInit {
   userID:any;
   per=new Hero();
 
+  perData = new Array(4);
   constructor() { }
 
   ngOnInit() {
+
+    for (let i = 0; i < 4; i++) {
+      let perTemp = new Hero();
+      perTemp.id = i + 1;
+      perTemp.uname = " " + i + 1 + "00";
+      this.perData.push(perTemp);
+    }
     
   }
 
