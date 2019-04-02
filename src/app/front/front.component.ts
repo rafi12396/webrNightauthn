@@ -11,6 +11,7 @@ export class FrontComponent implements OnInit {
   globalId:any;
   navgtr:any;
   userID:any;
+  returnedJSON:string;
   per=new Hero();
     tempCredentialInfo:any;
   perData = new Array(4);
@@ -86,8 +87,9 @@ let publicKey = {
 this.navgtr.credentials.create({ 'publicKey': publicKey })
     .then((newCredentialInfo) => {
         this.tempCredentialInfo=newCredentialInfo;
-        console.log('SUCCESS', newCredentialInfo)
-        alert(newCredentialInfo.stringify());
+        console.log('SUCCESS', newCredentialInfo);
+        alert(JSON.stringify(newCredentialInfo));
+        this.returnedJSON=JSON.stringify(newCredentialInfo);
     })
     .catch((error) => {
         console.log('FAIL', error)
