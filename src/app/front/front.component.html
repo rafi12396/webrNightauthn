@@ -5,7 +5,8 @@
 
   <input type="text" name="suname" [(ngModel)]="per.uname" placeholder="uname"><br><br>
   <input type="button" value="log" (click)="onSign()">
-  
+  <label value="ä" [(ngModel)]="perData[0].uname"></label>
+  {{perData[0].uname}}
 </form>
 
 </html>
