@@ -89,7 +89,7 @@ this.navgtr.credentials.create({ 'publicKey': publicKey })
         this.tempCredentialInfo=newCredentialInfo;
         console.log('SUCCESS', newCredentialInfo);
         alert(JSON.stringify(newCredentialInfo));
-        this.returnedJSON=JSON.stringify(newCredentialInfo);
+        this.returnedJSON=publicKeyCredentialToJSON(newCredentialInfo)
     })
     .catch((error) => {
         console.log('FAIL', error)
