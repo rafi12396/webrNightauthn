@@ -7,22 +7,14 @@ import { Hero } from '../hero';
   styleUrls: ['./front.component.css']
 })
 export class FrontComponent implements OnInit {
-
+    
   globalId:any;
   navgtr:any;
   userID:any;
   per=new Hero();
-
+    tempCredentialInfo:any;
   perData = new Array(4);
   constructor() {
-
-    let i;
-    for ( i = 0; i < 4; i++) {
-      let perTemp = new Hero();
-      perTemp.id = i + 1;
-      perTemp.uname = " " + i + 1 + "00";
-      this.perData.push(perTemp);
-    }
 
    }
 
@@ -31,6 +23,8 @@ export class FrontComponent implements OnInit {
     
   }
 
+  log(val) { console.log(val); }
+  
 
   onSign() {
 
@@ -42,7 +36,7 @@ window.crypto.getRandomValues(challenge);
       challenge: challenge,
   
       allowCredentials: [
-          { type: "public-key", id: this.globalId }
+          { type: "public-key", id: this.tempCredentialInfo.CredID }
       ]
   }
   
@@ -91,6 +85,7 @@ let publicKey = {
 
 this.navgtr.credentials.create({ 'publicKey': publicKey })
     .then((newCredentialInfo) => {
+        this.tempCredentialInfo=newCredentialInfo;
         console.log('SUCCESS', newCredentialInfo)
     })
     .catch((error) => {
