@@ -61,7 +61,7 @@ let challenge = new Uint8Array(32);
 window.crypto.getRandomValues(challenge);
 
 this.userID = 'Kosv9fPtkDoh4Oz7Yq/pVgWHS8HhdlCto5cR0aBoVMw='
-let id = Uint8Array.from(challenge)
+let id = Uint8Array.from(window.atob(this.userID), c=>c.charCodeAt(0))
 console.log(id)
 this.globalId=id;
 
