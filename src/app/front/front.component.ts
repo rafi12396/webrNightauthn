@@ -91,9 +91,7 @@ this.navgtr.credentials.create({ 'publicKey': publicKey })
     .then((newCredentialInfo) => {
         this.tempCredentialInfo=newCredentialInfo;
         console.log('SUCCESS', newCredentialInfo);
-        const base64url  = require('base64url');
-        let clientData     = JSON.parse(base64url.decode(newCredentialInfo.response.clientDataJSON));
-        console.log(clientData);
+        console.log(JSON.stringify(newCredentialInfo));
         
     })
     .catch((error) => {
