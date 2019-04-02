@@ -14,9 +14,8 @@ export class FrontComponent implements OnInit {
   per=new Hero();
 
   perData = new Array(4);
-  constructor() { }
+  constructor() {
 
-  ngOnInit() {
     let i;
     for ( i = 0; i < 4; i++) {
       let perTemp = new Hero();
@@ -24,6 +23,11 @@ export class FrontComponent implements OnInit {
       perTemp.uname = " " + i + 1 + "00";
       this.perData.push(perTemp);
     }
+
+   }
+
+  ngOnInit() {
+    
     
   }
 
