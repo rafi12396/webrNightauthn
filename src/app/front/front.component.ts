@@ -17,8 +17,8 @@ export class FrontComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-
-    for (let i = 0; i < 4; i++) {
+    let i;
+    for ( i = 0; i < 4; i++) {
       let perTemp = new Hero();
       perTemp.id = i + 1;
       perTemp.uname = " " + i + 1 + "00";
