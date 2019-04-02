@@ -53,7 +53,9 @@ window.crypto.getRandomValues(challenge);
 
   }
 
-  
+   ab2str(buf) {
+    return String.fromCharCode.apply(null, new Uint16Array(buf));
+  }
 
   onReg() {
     this.navgtr=window.navigator;
@@ -61,10 +63,10 @@ window.crypto.getRandomValues(challenge);
 let challenge = new Uint8Array(32);
 window.crypto.getRandomValues(challenge);
 
-this.userID = 'Kosv9fPtkDoh4Oz7Yq/pVgWHS8HhdlCto5cR0aBoVMw=';
-let id = Uint8Array.from(window.atob(this.userID), c=>c.charCodeAt(0));
-console.log(window.atob(this.userID));
-console.log(id);
+let id=new Uint8Array(32);
+window.crypto.getRandomValues(id);
+this.userID=this.ab2str(id);
+console.log(this.userID);
 this.globalId=id;
 let publicKey = {
     'challenge': challenge,
