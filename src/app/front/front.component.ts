@@ -37,6 +37,7 @@ window.crypto.getRandomValues(challenge);
   
       allowCredentials:this.per.authenticators
   }
+  console.log(publicKey);
   
   this.navgtr.credentials.get({ 'publicKey': publicKey })
     .then((getAssertionResponse) => {
