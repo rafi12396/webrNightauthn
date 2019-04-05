@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import base64url from "base64url";
+
 import { Hero } from '../hero';
 
 @Component({
@@ -19,8 +19,7 @@ export class FrontComponent implements OnInit {
   
   constructor() {
 
-    const base64url  = require('base64url');
-    var Buffer = require('buffer/').Buffer
+  
    }
 
   ngOnInit() {
@@ -92,11 +91,9 @@ this.navgtr.credentials.create({ 'publicKey': publicKey })
     .then((newCredentialInfo) => {
       
 
-let clientData     = JSON.parse(base64url.decode(newCredentialInfo.response.clientDataJSON));
-console.log(clientData);
+
       var idList = [{
         id: newCredentialInfo.id,
-        transports: ["usb", "nfc", "ble"],
         type: "public-key"
     }];
         this.per.authenticators.push(idList);
