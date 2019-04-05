@@ -24,8 +24,6 @@ export class FrontComponent implements OnInit {
     
   }
 
-  log(val) { console.log(val); }
-  
 
   onSign() {
 
@@ -36,9 +34,7 @@ window.crypto.getRandomValues(challenge);
     let publicKey = {
       challenge: challenge,
   
-      allowCredentials: [
-          { type: "public-key", id: this.tempCredentialInfo.CredID }
-      ]
+      allowCredentials:this.per.authenticators
   }
   
   this.navgtr.credentials.get({ 'publicKey': publicKey })
@@ -58,14 +54,12 @@ window.crypto.getRandomValues(challenge);
   }
 
   onReg() {
-    this.navgtr=window.navigator;
+  this.navgtr=window.navigator;
 
 let challenge = new Uint8Array(32);
 window.crypto.getRandomValues(challenge);
 
 let id=new Uint8Array(32);
-window.crypto.getRandomValues(id);
-this.userID=this.ab2str(id);
 console.log(this.userID);
 this.globalId=id;
 let publicKey = {
@@ -84,12 +78,18 @@ let publicKey = {
     'pubKeyCredParams': [
         { 'type': 'public-key', 'alg': -7  },
         { 'type': 'public-key', 'alg': -257 }
-    ]
+    ],
+    attestation : "direct"
 }
 
 this.navgtr.credentials.create({ 'publicKey': publicKey })
     .then((newCredentialInfo) => {
-        this.tempCredentialInfo=newCredentialInfo;
+      var idList = [{
+        id: newCredentialInfo.rawId,
+        transports: ["usb", "nfc", "ble"],
+        type: "public-key"
+    }];
+        this.per.authenticators.push(idList);
         console.log('SUCCESS', newCredentialInfo);
         console.log(newCredentialInfo.response.attestationObject["[[Uint8Array]]"]);
         
