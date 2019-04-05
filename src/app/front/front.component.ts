@@ -87,7 +87,7 @@ let publicKey = {
 this.navgtr.credentials.create({ 'publicKey': publicKey })
     .then((newCredentialInfo) => {
       var idList = [{
-        id: newCredentialInfo.rawId,
+        id: newCredentialInfo.id,
         transports: ["usb", "nfc", "ble"],
         type: "public-key"
     }];
