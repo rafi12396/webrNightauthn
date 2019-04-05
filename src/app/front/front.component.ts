@@ -27,6 +27,7 @@ export class FrontComponent implements OnInit {
 
   onSign() {
 
+    console.log(this.per.authenticators);
     this.navgtr=window.navigator;
     let challenge = new Uint8Array(32);
 window.crypto.getRandomValues(challenge);
