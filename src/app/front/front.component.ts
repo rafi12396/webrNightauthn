@@ -20,6 +20,7 @@ export class FrontComponent implements OnInit {
   constructor() {
 
     const base64url  = require('base64url');
+    var Buffer = require('buffer/').Buffer
    }
 
   ngOnInit() {
