@@ -1,8 +1,7 @@
 export class Hero {
 
-    constructor(
-        public id?: number,
-        public uname?: string,
-        public authenticators?: any[]
-      ) {  }
+      public id?: number;
+        public uname?: string;
+        public authenticators?: any[] = new Array();
+    constructor() {  }
 }
