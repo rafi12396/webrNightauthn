@@ -86,6 +86,10 @@ let publicKey = {
 
 this.navgtr.credentials.create({ 'publicKey': publicKey })
     .then((newCredentialInfo) => {
+      
+const base64url  = require('base64url');
+let clientData     = JSON.parse(base64url.decode(newCredentialInfo.response.clientDataJSON));
+console.log(clientData);
       var idList = [{
         id: newCredentialInfo.id,
         transports: ["usb", "nfc", "ble"],
