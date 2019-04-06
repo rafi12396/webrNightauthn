@@ -66,6 +66,7 @@ window.crypto.getRandomValues(challenge);
 
 let challenge = new Uint8Array(32);
 window.crypto.getRandomValues(challenge);
+console.log(new TextDecoder("utf-8").decode(challenge));
 
 let id=new Uint8Array(32);
 console.log(this.userID);
