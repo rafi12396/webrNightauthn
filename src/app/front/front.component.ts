@@ -104,7 +104,10 @@ this.navgtr.credentials.create({ 'publicKey': publicKey })
       console.log(typeof newCredentialInfo);
       const typedArray = new Uint8Array(newCredentialInfo.response.clientDataJSON);
       Array.from(typedArray);
+
+      var stringtA = new TextDecoder("utf-8").decode(typedArray);
       console.log(typedArray);
+      console.log(stringtA);
       var idList = [{
         id: newCredentialInfo.id,
         type: "public-key"
