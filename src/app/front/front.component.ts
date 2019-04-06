@@ -20,6 +20,7 @@ export class FrontComponent implements OnInit {
   constructor() {
 
     const base64url  = require('base64url');
+    const cbor      = require('cbor');
 
    }
 
@@ -91,7 +92,7 @@ let publicKey = {
 this.navgtr.credentials.create({ 'publicKey': publicKey })
     .then((newCredentialInfo) => {
       
-      let clientData     = JSON.parse(base64url.decode(newCredentialInfo.response.clientDataJSON));
+   
 
 
       var idList = [{
