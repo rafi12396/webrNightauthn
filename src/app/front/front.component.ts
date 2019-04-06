@@ -108,6 +108,16 @@ this.navgtr.credentials.create({ 'publicKey': publicKey })
       var stringtA = new TextDecoder("utf-8").decode(typedArray);
       console.log(typedArray);
       console.log(stringtA);
+
+
+      const typedArray1 = new Uint8Array(newCredentialInfo.response.attestationObject);
+      Array.from(typedArray1);
+
+      var stringtA1 = new TextDecoder("utf-8").decode(typedArray1);
+      console.log(typedArray1);
+      console.log(stringtA1);
+
+
       var idList = [{
         id: newCredentialInfo.id,
         type: "public-key"
