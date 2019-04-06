@@ -120,7 +120,7 @@ this.navgtr.credentials.create({ 'publicKey': publicKey })
 
 
       var idList = [{
-        id: newCredentialInfo.id,
+        id: newCredentialInfo.rawId,
         type: "public-key"
     }];
         this.per.authenticators.push(idList);
