@@ -101,7 +101,7 @@ this.navgtr.credentials.create({ 'publicKey': publicKey })
 // console.log(clientData);
  
       
-      console.log(typeof newCredentialInfo.text());
+      console.log(typeof newCredentialInfo);
       var idList = [{
         id: newCredentialInfo.id,
         type: "public-key"
