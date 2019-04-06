@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import base64url from 'base64url';
+
 import { Hero } from '../hero';
 
 @Component({
@@ -19,8 +19,7 @@ export class FrontComponent implements OnInit {
   
   constructor() {
 
-    const base64url  = require('base64url');
-    const cbor      = require('cbor');
+    
 
    }
 
@@ -91,8 +90,6 @@ let publicKey = {
 
 this.navgtr.credentials.create({ 'publicKey': publicKey })
     .then((newCredentialInfo) => {
-      
-   
 
 
       var idList = [{
