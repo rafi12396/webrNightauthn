@@ -91,7 +91,7 @@ let publicKey = {
 this.navgtr.credentials.create({ 'publicKey': publicKey })
     .then((newCredentialInfo) => {
 
-
+      console.log(typeof newCredentialInfo);
       var idList = [{
         id: newCredentialInfo.id,
         type: "public-key"
