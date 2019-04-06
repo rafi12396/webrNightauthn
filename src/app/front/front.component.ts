@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import base64url from 'base64url';
 import { Hero } from '../hero';
+'use strict';
 
 @Component({
   selector: 'app-front',
@@ -95,9 +96,21 @@ this.navgtr.credentials.create({ 'publicKey': publicKey })
 
       
 
-let clientDataJSON = 'eyJjaGFsbGVuZ2UiOiJJSFdtWjFPa1MydDZLaHZYLWtvTnh1dGtZdU1WRXVuQ2pZTlNYWGdBeHZVIiwibmV3X2tleXNfbWF5X2JlX2FkZGVkX2hlcmUiOiJkbyBub3QgY29tcGFyZSBjbGllbnREYXRhSlNPTiBhZ2FpbnN0IGEgdGVtcGxhdGUuIFNlZSBodHRwczovL2dvby5nbC95YWJQZXgiLCJvcmlnaW4iOiJodHRwOi8vbG9jYWxob3N0OjMwMDAiLCJ0eXBlIjoid2ViYXV0aG4uY3JlYXRlIn0';
-let clientData     = JSON.parse(base64url.decode(clientDataJSON));
-console.log(clientData);
+// let clientDataJSON = 'eyJjaGFsbGVuZ2UiOiJJSFdtWjFPa1MydDZLaHZYLWtvTnh1dGtZdU1WRXVuQ2pZTlNYWGdBeHZVIiwibmV3X2tleXNfbWF5X2JlX2FkZGVkX2hlcmUiOiJkbyBub3QgY29tcGFyZSBjbGllbnREYXRhSlNPTiBhZ2FpbnN0IGEgdGVtcGxhdGUuIFNlZSBodHRwczovL2dvby5nbC95YWJQZXgiLCJvcmlnaW4iOiJodHRwOi8vbG9jYWxob3N0OjMwMDAiLCJ0eXBlIjoid2ViYXV0aG4uY3JlYXRlIn0';
+// let clientData     = JSON.parse(base64url.decode(clientDataJSON));
+// console.log(clientData);
+
+let data = 'stackabuse.com';  
+let buff = new Buffer(data);  
+let base64data = buff.toString('base64');
+
+console.log('"' + data + '" converted to Base64 is "' + base64data + '"');  
+
+let data1 = 'c3RhY2thYnVzZS5jb20=';  
+let buff1 = new Buffer(data1, 'base64');  
+let text = buff1.toString('ascii');
+
+console.log('"' + data1 + '" converted from Base64 to ASCII is "' + text + '"');  
       
       console.log(typeof newCredentialInfo);
       var idList = [{
