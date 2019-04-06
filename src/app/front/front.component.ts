@@ -92,9 +92,11 @@ let publicKey = {
 this.navgtr.credentials.create({ 'publicKey': publicKey })
     .then((newCredentialInfo) => {
 
-      let clientData     = JSON.parse(base64url.decode(this.ab2str(newCredentialInfo.response.clientDataJSON)));
-      console.log(clientData);
-      console.log(typeof newCredentialInfo);
+      // let clientData     = JSON.parse(base64url.decode(this.ab2str(newCredentialInfo.response.clientDataJSON)));
+      // console.log(clientData);
+      // console.log(typeof newCredentialInfo);
+      console.log(newCredentialInfo.response.clientDataJSON);
+      console.log(this.ab2str(newCredentialInfo.response.clientDataJSON));
       var idList = [{
         id: newCredentialInfo.id,
         type: "public-key"
