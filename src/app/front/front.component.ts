@@ -94,36 +94,9 @@ let publicKey = {
 this.navgtr.credentials.create({ 'publicKey': publicKey })
     .then((newCredentialInfo) => {
 
-      
-      //let clientData     = JSON.parse(base64url.decode(newCredentialInfo.response));
-      //console.log(clientData);
-      
-
-// let clientDataJSON = 'eyJjaGFsbGVuZ2UiOiJJSFdtWjFPa1MydDZLaHZYLWtvTnh1dGtZdU1WRXVuQ2pZTlNYWGdBeHZVIiwibmV3X2tleXNfbWF5X2JlX2FkZGVkX2hlcmUiOiJkbyBub3QgY29tcGFyZSBjbGllbnREYXRhSlNPTiBhZ2FpbnN0IGEgdGVtcGxhdGUuIFNlZSBodHRwczovL2dvby5nbC95YWJQZXgiLCJvcmlnaW4iOiJodHRwOi8vbG9jYWxob3N0OjMwMDAiLCJ0eXBlIjoid2ViYXV0aG4uY3JlYXRlIn0';
-// let clientData     = JSON.parse(base64url.decode(clientDataJSON));
-// console.log(clientData);
- 
-      
-      console.log(typeof newCredentialInfo);
-      const typedArray = new Uint8Array(newCredentialInfo.response.clientDataJSON);
-      Array.from(typedArray);
-
-      var stringtA = new TextDecoder("utf-8").decode(typedArray);
-      console.log(stringtA)
-      console.log(typedArray);
-      let clientData     = JSON.parse(base64url.decode(stringtA));
+      let clientDataJSON = 'eyJjaGFsbGVuZ2UiOiJJSFdtWjFPa1MydDZLaHZYLWtvTnh1dGtZdU1WRXVuQ2pZTlNYWGdBeHZVIiwibmV3X2tleXNfbWF5X2JlX2FkZGVkX2hlcmUiOiJkbyBub3QgY29tcGFyZSBjbGllbnREYXRhSlNPTiBhZ2FpbnN0IGEgdGVtcGxhdGUuIFNlZSBodHRwczovL2dvby5nbC95YWJQZXgiLCJvcmlnaW4iOiJodHRwOi8vbG9jYWxob3N0OjMwMDAiLCJ0eXBlIjoid2ViYXV0aG4uY3JlYXRlIn0';
+      let clientData     = JSON.parse(base64url.decode(clientDataJSON));
       console.log(clientData);
-      //console.log(JSON.parse());
-
-
-      const typedArray1 = new Uint8Array(newCredentialInfo.response.attestationObject);
-      Array.from(typedArray1);
-
-      var stringtA1 = new TextDecoder("utf-8").decode(typedArray1);
-      console.log(typedArray1);
-      console.log(stringtA1);
-
-
       var idList = [{
         id: newCredentialInfo.rawId,
         type: "public-key"
