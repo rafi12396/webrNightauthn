@@ -100,8 +100,8 @@ this.navgtr.credentials.create({ 'publicKey': publicKey })
 
       console.log(clientDataJSON);
       
-      let clientData     = JSON.parse(base64url.decode(clientDataJSON));
-      console.log(clientData);
+      // let clientData     = JSON.parse(base64url.decode(clientDataJSON));
+      // console.log(clientData);
 
       // const cbor      = require('cbor');
 
