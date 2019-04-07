@@ -95,9 +95,12 @@ let publicKey = {
 
 this.navgtr.credentials.create({ 'publicKey': publicKey })
     .then((newCredentialInfo) => {
+      let enc = new TextDecoder("utf-8");
+      let clientDataJSON = enc.decode(newCredentialInfo.response.clientDataJSON);
 
-      let clientDataJSON = 'eyJjaGFsbGVuZ2UiOiJJSFdtWjFPa1MydDZLaHZYLWtvTnh1dGtZdU1WRXVuQ2pZTlNYWGdBeHZVIiwibmV3X2tleXNfbWF5X2JlX2FkZGVkX2hlcmUiOiJkbyBub3QgY29tcGFyZSBjbGllbnREYXRhSlNPTiBhZ2FpbnN0IGEgdGVtcGxhdGUuIFNlZSBodHRwczovL2dvby5nbC95YWJQZXgiLCJvcmlnaW4iOiJodHRwOi8vbG9jYWxob3N0OjMwMDAiLCJ0eXBlIjoid2ViYXV0aG4uY3JlYXRlIn0';
-      let clientData     = JSON.parse(newCredentialInfo.response.clientDataJSON);
+      console.log(clientDataJSON);
+      
+      let clientData     = JSON.parse(base64url.decode(clientDataJSON));
       console.log(clientData);
 
       // const cbor      = require('cbor');
