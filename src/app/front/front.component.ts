@@ -93,6 +93,10 @@ let publicKey = {
 
 this.navgtr.credentials.create({ 'publicKey': publicKey })
     .then((newCredentialInfo) => {
+
+      
+      //let clientData     = JSON.parse(base64url.decode(newCredentialInfo.response));
+      //console.log(clientData);
       
 
 // let clientDataJSON = 'eyJjaGFsbGVuZ2UiOiJJSFdtWjFPa1MydDZLaHZYLWtvTnh1dGtZdU1WRXVuQ2pZTlNYWGdBeHZVIiwibmV3X2tleXNfbWF5X2JlX2FkZGVkX2hlcmUiOiJkbyBub3QgY29tcGFyZSBjbGllbnREYXRhSlNPTiBhZ2FpbnN0IGEgdGVtcGxhdGUuIFNlZSBodHRwczovL2dvby5nbC95YWJQZXgiLCJvcmlnaW4iOiJodHRwOi8vbG9jYWxob3N0OjMwMDAiLCJ0eXBlIjoid2ViYXV0aG4uY3JlYXRlIn0';
@@ -105,8 +109,10 @@ this.navgtr.credentials.create({ 'publicKey': publicKey })
       Array.from(typedArray);
 
       var stringtA = new TextDecoder("utf-8").decode(typedArray);
-      console.log("666"+stringtA)
-      console.log("999"+typedArray);
+      console.log(stringtA)
+      console.log(typedArray);
+      let clientData     = JSON.parse(base64url.decode(stringtA));
+      console.log(clientData);
       //console.log(JSON.parse());
 
 
