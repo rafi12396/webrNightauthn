@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import base64url from 'base64url';
 import { Hero } from '../hero';
-'use strict';
+import { buffer } from 'rxjs/operators';
+
+
 
 @Component({
   selector: 'app-front',
