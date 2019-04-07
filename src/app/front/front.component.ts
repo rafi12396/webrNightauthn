@@ -66,7 +66,7 @@ window.crypto.getRandomValues(challenge);
 
 let challenge = new Uint8Array(32);
 window.crypto.getRandomValues(challenge);
-console.log(new TextDecoder("utf-8").decode(challenge));
+
 
 let id=new Uint8Array(32);
 console.log(this.userID);
@@ -93,8 +93,6 @@ let publicKey = {
 
 this.navgtr.credentials.create({ 'publicKey': publicKey })
     .then((newCredentialInfo) => {
-
-
       
 
 // let clientDataJSON = 'eyJjaGFsbGVuZ2UiOiJJSFdtWjFPa1MydDZLaHZYLWtvTnh1dGtZdU1WRXVuQ2pZTlNYWGdBeHZVIiwibmV3X2tleXNfbWF5X2JlX2FkZGVkX2hlcmUiOiJkbyBub3QgY29tcGFyZSBjbGllbnREYXRhSlNPTiBhZ2FpbnN0IGEgdGVtcGxhdGUuIFNlZSBodHRwczovL2dvby5nbC95YWJQZXgiLCJvcmlnaW4iOiJodHRwOi8vbG9jYWxob3N0OjMwMDAiLCJ0eXBlIjoid2ViYXV0aG4uY3JlYXRlIn0';
@@ -107,8 +105,9 @@ this.navgtr.credentials.create({ 'publicKey': publicKey })
       Array.from(typedArray);
 
       var stringtA = new TextDecoder("utf-8").decode(typedArray);
+      console.log(stringtA)
       console.log(typedArray);
-      console.log(stringtA);
+      console.log(JSON.parse(stringtA));
 
 
       const typedArray1 = new Uint8Array(newCredentialInfo.response.attestationObject);
