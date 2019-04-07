@@ -105,9 +105,9 @@ this.navgtr.credentials.create({ 'publicKey': publicKey })
       Array.from(typedArray);
 
       var stringtA = new TextDecoder("utf-8").decode(typedArray);
-      console.log(stringtA)
-      console.log(typedArray);
-      console.log(JSON.parse(stringtA));
+      console.log("666"+stringtA)
+      console.log("999"+typedArray);
+      //console.log(JSON.parse());
 
 
       const typedArray1 = new Uint8Array(newCredentialInfo.response.attestationObject);
