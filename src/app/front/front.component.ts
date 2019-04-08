@@ -25,7 +25,7 @@ export class FrontComponent implements OnInit {
   constructor() {
 
     const base64url  = require('base64url');
-    const cbor      = require('cbor');
+    //const cbor      = require('cbor');
     
    }
 
