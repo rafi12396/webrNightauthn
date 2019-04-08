@@ -103,8 +103,8 @@ this.navgtr.credentials.create({ 'publicKey': publicKey })
        let clientData     = JSON.parse(clientDataJSON);
        console.log(clientData);
 
-      //  let attstnJSON = enc.decode(newCredentialInfo.response.attestationObject);
-      //  console.log(attstnJSON);
+       let attstnJSON = enc.decode(newCredentialInfo.response.attestationObject);
+       console.log(attstnJSON);
 
 
 
