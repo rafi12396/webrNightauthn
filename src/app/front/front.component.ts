@@ -6,6 +6,7 @@ import { Hero } from '../hero';
 // declare var cbor:any;
 
 declare const onClickReg: any;
+declare const onClickSign:any;
 
 @Component({
   selector: 'app-front',
@@ -148,6 +149,11 @@ this.navgtr.credentials.create({ 'publicKey': publicKey })
 
     onClickReg();
 
+  }
+
+  onSign() {
+
+    onClickSign();
   }
 
 }
