@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from '../hero';
-import cbor from 'cbor';
 
 
-declare var base64url : any;
-declare var cbor:any;
+// declare var base64url:any;
+// declare var cbor:any;
+
+declare const onClickReg: any;
 
 @Component({
   selector: 'app-front',
@@ -13,13 +14,13 @@ declare var cbor:any;
 })
 export class FrontComponent implements OnInit {
     
-  globalId:any;
-  navgtr:any;
-  userID:any;
-  returnedJSON:string;
-  per=new Hero();
-    tempCredentialInfo:any;
-  perData = new Array(4);
+  // globalId:any;
+  // navgtr:any;
+  // userID:any;
+  // returnedJSON:string;
+  // per=new Hero();
+  //   tempCredentialInfo:any;
+  // perData = new Array(4);
   
   
   constructor() {
@@ -34,7 +35,7 @@ export class FrontComponent implements OnInit {
     
   }
 
-
+/*
   onSign() {
 
     console.log(this.per.authenticators);
@@ -110,9 +111,9 @@ this.navgtr.credentials.create({ 'publicKey': publicKey })
 
       //  const cbor      = require('cbor');
       let attestationObject       = 'o2NmbXRoZmlkby11MmZnYXR0U3RtdKJjc2lnWEYwRAIgRvfOaUcMVmHqrKzXSH2Inb4PIshESObwuPrtTS_W3RMCICF_qfvwZhDRF8bqiNGYty2iXcOxY8Tgi7TgQJHZqi4wY3g1Y4FZAlMwggJPMIIBN6ADAgECAgQ8aClNMA0GCSqGSIb3DQEBCwUAMC4xLDAqBgNVBAMTI1l1YmljbyBVMkYgUm9vdCBDQSBTZXJpYWwgNDU3MjAwNjMxMCAXDTE0MDgwMTAwMDAwMFoYDzIwNTAwOTA0MDAwMDAwWjAxMS8wLQYDVQQDDCZZdWJpY28gVTJGIEVFIFNlcmlhbCAyMzkyNTczNDgxMTExNzkwMTBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABL3fZ5Pbd5TDUDFx7SxNRUrZc2Z1Gki6pdn5tWo6IIF5a07fK817knoUkxD7xGhHb_xXkql9ti-gKGvGoyACDmOjOzA5MCIGCSsGAQQBgsQKAgQVMS4zLjYuMS40LjEuNDE0ODIuMS41MBMGCysGAQQBguUcAgEBBAQDAgUgMA0GCSqGSIb3DQEBCwUAA4IBAQCqwA1RCX7sFaSGs3m8xINA-GfTly7Oamf7pHDjYMZEWfCtOELT_wgeceqJU5cbI_klwK0AwkcxGFIG8LOpGSn7kbdmtT_hM1Iqg1i40SC0q_t_6O8ke2T_xqYhSsHZvnM2_eDzqBg_k0tSGHX14_eJgK-XClseBCo4dtdLqL7v6S3S43PMZEHIlK182aT0fa09pP6vR5GYR1PjWgic5Mvj08g26tCip86lYVrX5EgQhsN3s2ZE0vuZa7zimyGtuJX3k4LuxUk-TsEzwhZ_B3H1mTFzEg_yjVPogaiXQMEyzzw0aCy7z05dvcHggCIfh1KZgUHdFJbXDzqwPyxbwH-taGF1dGhEYXRhWMRJlg3liA6MaHQ0Fw9kdmBbj-SuuaKGMseZXPO6gx2XY0EAAAAAAAAAAAAAAAAAAAAAAAAAAABAimCIoe8U_N9M1rTGeCqJ96TAu5uqSPa7YUzdh7qq-AdJlnBl8NwCpu2-sNj9UIVH5rAjX_RXlSGTGWKexKIZXKUBAgMmIAEhWCB7XpGVxTYo6jtkxB7sBR4Af_YM0GvInN5V7IvUIilN2yJYINphegJ6kNET_VIp0QOxssW8xxUFEgg5ic3HXmoGg4fS';
-      let attestationObjectBuffer =new base64url.toBuffer(newCredentialInfo.response.attestationObject);
+      let attestationObjectBuffer =base64url.toBuffer(newCredentialInfo.response.attestationObject);
       console.log(attestationObjectBuffer);
-      let ctapMakeCredResp        =new cbor.decodeAllSync(attestationObjectBuffer)[0];
+      let ctapMakeCredResp        =cbor.decodeAllSync(attestationObjectBuffer)[0];
 
       console.log(ctapMakeCredResp);
 
@@ -140,6 +141,12 @@ this.navgtr.credentials.create({ 'publicKey': publicKey })
     .catch((error) => {
         console.log('FAIL', error)
     })
+
+  }*/
+
+  onReg() {
+
+    onClickReg();
 
   }
 
