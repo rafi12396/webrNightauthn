@@ -14,13 +14,13 @@ declare const onClickReg: any;
 })
 export class FrontComponent implements OnInit {
     
-  // globalId:any;
-  // navgtr:any;
-  // userID:any;
-  // returnedJSON:string;
-  // per=new Hero();
-  //   tempCredentialInfo:any;
-  // perData = new Array(4);
+  globalId:any;
+  navgtr:any;
+  userID:any;
+  returnedJSON:string;
+  per=new Hero();
+    tempCredentialInfo:any;
+  perData = new Array(4);
   
   
   constructor() {
