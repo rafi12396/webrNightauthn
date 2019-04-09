@@ -28,6 +28,14 @@ var publicKey = {
 navigator.credentials.create({ 'publicKey': publicKey })
     .then((newCredentialInfo) => {
         console.log('SUCCESS', newCredentialInfo)
+
+        const base64url  = require('base64url');
+
+let clientDataJSON = 'eyJjaGFsbGVuZ2UiOiJJSFdtWjFPa1MydDZLaHZYLWtvTnh1dGtZdU1WRXVuQ2pZTlNYWGdBeHZVIiwibmV3X2tleXNfbWF5X2JlX2FkZGVkX2hlcmUiOiJkbyBub3QgY29tcGFyZSBjbGllbnREYXRhSlNPTiBhZ2FpbnN0IGEgdGVtcGxhdGUuIFNlZSBodHRwczovL2dvby5nbC95YWJQZXgiLCJvcmlnaW4iOiJodHRwOi8vbG9jYWxob3N0OjMwMDAiLCJ0eXBlIjoid2ViYXV0aG4uY3JlYXRlIn0';
+let clientData     = JSON.parse(base64url.decode(clientDataJSON));
+
+console.log(clientData);
+
     })
     .catch((error) => {
         console.log('FAIL', error)
