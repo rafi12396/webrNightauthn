@@ -2,11 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Hero } from '../hero';
 
 
-// declare var base64url:any;
-// declare var cbor:any;
+ declare var base64url:any;
+ declare var cbor:any;
 
-declare const onClickReg: any;
-declare const onClickSign:any;
 
 @Component({
   selector: 'app-front',
@@ -26,8 +24,8 @@ export class FrontComponent implements OnInit {
   
   constructor() {
 
-    //const base64url  = require('base64url');
-    //const cbor      = require('cbor');
+    const base64url  = require('base64url');
+    const cbor      = require('cbor');
     
    }
 
@@ -36,7 +34,7 @@ export class FrontComponent implements OnInit {
     
   }
 
-/*
+
   onSign() {
 
     console.log(this.per.authenticators);
@@ -143,17 +141,7 @@ this.navgtr.credentials.create({ 'publicKey': publicKey })
         console.log('FAIL', error)
     })
 
-  }*/
-
-  onReg() {
-
-    onClickReg();
-
   }
 
-  onSign() {
-
-    onClickSign();
-  }
 
 }
