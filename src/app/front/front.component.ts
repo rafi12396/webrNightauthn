@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Hero } from '../hero';
 
 
- declare var base64url:any;
- declare var cbor:any;
+//  declare var base64url:any;
+//  declare var cbor:any;
 
 
 @Component({
@@ -24,8 +24,8 @@ export class FrontComponent implements OnInit {
   
   constructor() {
 
-    const base64url  = require('base64url');
-    const cbor      = require('cbor');
+    // const base64url  = require('base64url');
+    // const cbor      = require('cbor');
     
    }
 
